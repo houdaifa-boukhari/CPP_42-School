@@ -5,22 +5,19 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: hel-bouk <hel-bouk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/15 15:56:49 by hel-bouk          #+#    #+#             */
-/*   Updated: 2024/10/18 15:14:52 by hel-bouk         ###   ########.fr       */
+/*   Created: 2024/10/21 18:28:18 by hel-bouk          #+#    #+#             */
+/*   Updated: 2024/10/21 18:31:21 by hel-bouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "sed.hpp"
+#include "Harl.hpp"
 
 int main(int ac, char **av)
 {
-    t_file file;
+    Harl a;
 
-    if (ac != 4)
-    {
-        std::cerr << "Usage: ./sed filename s1 s2\n";
-        return (1);
-    }
-    init_file(&file, av);
-    read_write_file(&file);
+    if (ac != 2)
+        return (std::cout << "Use  ./harlFilter level\n", 1);
+    a.complain(av[1]);
+    return (0);
 }
