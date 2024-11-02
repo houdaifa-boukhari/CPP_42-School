@@ -6,7 +6,7 @@
 /*   By: hel-bouk <hel-bouk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 10:34:03 by hel-bouk          #+#    #+#             */
-/*   Updated: 2024/10/29 16:08:27 by hel-bouk         ###   ########.fr       */
+/*   Updated: 2024/11/02 13:30:19 by hel-bouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,20 +42,24 @@ std::ostream& operator<<(std::ostream &out, const Fixed &org)
     return (out);
 }
 
-void Fixed::operator=(const Fixed &org)
+Fixed& Fixed::operator=(const Fixed &org)
 {
+    if (this != &org)
+        this->fixed_point = org.fixed_point;
     std::cout << "Copy assignment operator called\n";
-    this->fixed_point = org.fixed_point;
+    return (*this);
 }
 
 void Fixed::setRawBits( int const raw )
 {
     fixed_point = raw;
 }
+
 int Fixed::get_fractional_part() const
 {
     return (fractional_part);
 }
+
 int Fixed::getRawBits( void ) const
 {
     return (fixed_point);

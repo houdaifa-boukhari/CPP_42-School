@@ -6,7 +6,7 @@
 /*   By: hel-bouk <hel-bouk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 09:28:09 by hel-bouk          #+#    #+#             */
-/*   Updated: 2024/10/28 13:04:13 by hel-bouk         ###   ########.fr       */
+/*   Updated: 2024/11/02 10:39:10 by hel-bouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ class Fixed
         Fixed(const Fixed& org);    
         int getRawBits( void ) const;
         void setRawBits( int const raw );
-        void operator=(const Fixed &org);
+        Fixed& operator=(const Fixed &org);
         ~Fixed();
 };
 

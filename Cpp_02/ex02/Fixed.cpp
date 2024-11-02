@@ -6,7 +6,7 @@
 /*   By: hel-bouk <hel-bouk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 09:28:17 by hel-bouk          #+#    #+#             */
-/*   Updated: 2024/10/29 19:08:25 by hel-bouk         ###   ########.fr       */
+/*   Updated: 2024/11/02 15:21:17 by hel-bouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,16 +18,52 @@ Fixed::Fixed()
     std::cout << "Default constructor called\n";
 }
 
+Fixed::Fixed(const int nb)
+{
+    fixed_point = nb << 8;
+    std::cout << "Int constructor called\n";
+}
+
+Fixed::Fixed(const float nb)
+{
+    std::cout << "Flaot constructor called\n";
+    fixed_point = int(roundf(nb * (1 << fractional_part)));
+}
+
 Fixed::Fixed(const Fixed& org)
 {
     this->fixed_point = org.fixed_point;
     std::cout << "Copy constructor called\n";
 }
 
-void Fixed::operator=(const Fixed &org)
+Fixed& Fixed::operator=(const Fixed &org)
 {
-    this->fixed_point = org.fixed_point;
+    if (this != &org)
+        this->fixed_point = org.fixed_point;
     std::cout << "copy assignment operator called\n";
+    return (*this);
+}
+
+int Fixed::get_fractional_part() const
+{
+    return (fractional_part);
+}
+
+std::ostream& operator<<(std::ostream &out, const Fixed &org)
+{
+    out << float(org.getRawBits()) / float(1 << org.get_fractional_part());
+    return (out);
+}
+
+
+float Fixed::toFloat( void ) const
+{
+    return (float(getRawBits()) / float(1 << get_fractional_part()));
+}
+
+int Fixed::toInt( void ) const
+{
+    return (fixed_point >> fractional_part);
 }
 
 bool Fixed::operator>(const Fixed &org) const
@@ -72,25 +108,25 @@ bool Fixed::operator!=(const Fixed &org) const
     return (false);
 }
 
-int Fixed::operator+(const Fixed &org) const
+float Fixed::operator+(const Fixed &org) const
 {
-    return (this->fixed_point + org.fixed_point);
+    return (this->toFloat() + org.toFloat());
 }
 
-int Fixed::operator-(const Fixed &org) const
+float Fixed::operator-(const Fixed &org) const
 {
-    return (this->fixed_point - org.fixed_point);
+    return (this->toFloat() - org.toFloat());
 }
 
-int Fixed::operator*(const Fixed &org) const
+float Fixed::operator*(const Fixed &org) const
 {
-    return (this->fixed_point * org.fixed_point);
+    return (this->toFloat() * org.toFloat());
 }
 
-int Fixed::operator/(const Fixed &org) const
+float Fixed::operator/(const Fixed &org) const
 {
     if (org.fixed_point != 0)
-        return (this->fixed_point / org.fixed_point);
+        return (this->toFloat() / org.toFloat());
     return (0);
 }
 
@@ -106,17 +142,16 @@ Fixed& Fixed::operator--()
     return (*this);
 }
 
-Fixed& Fixed::operator++(int)
+Fixed Fixed::operator++(int)
 {
-    Fixed  *a;
-    a = (this);
+    Fixed a(*this);
     this->fixed_point++;
-    return (*a);
+    return (a);
 }
 
-Fixed& Fixed::operator--(int)
+Fixed Fixed::operator--(int)
 {
-    Fixed a;
+    Fixed a(*this);
     this->fixed_point--;
     return (a);
 }
@@ -128,24 +163,35 @@ void Fixed::setRawBits( int const raw )
 
 int Fixed::getRawBits( void ) const
 {
-    std::cout << "getRawBits member function called\n";
     return (fixed_point);
 }
 
-Fixed& max(Fixed &org, Fixed &org1)
+Fixed& Fixed::max(Fixed &org, Fixed &org1)
 {
     if (org.getRawBits() > org1.getRawBits())
         return (org);
     return (org1);
 }
 
-Fixed& min(Fixed &org, Fixed &org1)
+Fixed& Fixed::min(Fixed &org, Fixed &org1)
 {
     if (org.getRawBits() < org1.getRawBits())
         return (org);
     return (org1);
 }
+const Fixed& Fixed::max(const Fixed &org, const Fixed &org1)
+{
+    if (org.getRawBits() > org1.getRawBits())
+        return (org);
+    return (org1);
+}
 
+const Fixed& Fixed::min(const Fixed &org, const Fixed &org1)
+{
+    if (org.getRawBits() < org1.getRawBits())
+        return (org);
+    return (org1);
+}
 Fixed::~Fixed()
 {
     std::cout << "Destructor called\n";

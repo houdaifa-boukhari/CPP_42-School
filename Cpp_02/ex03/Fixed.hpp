@@ -6,7 +6,7 @@
 /*   By: hel-bouk <hel-bouk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 09:28:09 by hel-bouk          #+#    #+#             */
-/*   Updated: 2024/11/01 18:40:15 by hel-bouk         ###   ########.fr       */
+/*   Updated: 2024/11/02 15:35:00 by hel-bouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,16 +38,18 @@ class Fixed
         bool operator<=(const Fixed &org) const;
         bool operator==(const Fixed &org) const;
         bool operator!=(const Fixed &org) const;
-        int operator+(const Fixed &org) const;
-        int operator-(const Fixed &org) const;
-        int operator*(const Fixed &org) const;
-        int operator/(const Fixed &org) const;
+        float operator+(const Fixed &org) const;
+        float operator-(const Fixed &org) const;
+        float operator*(const Fixed &org) const;
+        float operator/(const Fixed &org) const;
         Fixed&  operator++();
         Fixed&  operator--();
-        Fixed&  operator++(int) ;
-        Fixed&  operator--(int);
+        Fixed  operator++(int) ;
+        Fixed  operator--(int);
         static Fixed& max(Fixed &org, Fixed &org1);
         static Fixed& min(Fixed &org, Fixed &org1);
+        static const Fixed& min(const Fixed &org, const Fixed &org1);
+        static const Fixed& max(const Fixed &org, const Fixed &org1);
         ~Fixed();
 };
 

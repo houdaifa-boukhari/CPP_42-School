@@ -6,7 +6,7 @@
 /*   By: hel-bouk <hel-bouk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 09:28:09 by hel-bouk          #+#    #+#             */
-/*   Updated: 2024/10/29 15:38:20 by hel-bouk         ###   ########.fr       */
+/*   Updated: 2024/11/02 13:12:04 by hel-bouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ class Fixed
         int get_fractional_part() const;
         int getRawBits( void ) const;
         void setRawBits( int const raw );
-        void operator=(const Fixed &org);
+        Fixed& operator=(const Fixed &org);
         ~Fixed();
 };
 

@@ -6,7 +6,7 @@
 /*   By: hel-bouk <hel-bouk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 09:28:09 by hel-bouk          #+#    #+#             */
-/*   Updated: 2024/10/29 19:07:34 by hel-bouk         ###   ########.fr       */
+/*   Updated: 2024/11/02 15:18:40 by hel-bouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,23 +31,25 @@ class Fixed
         int get_fractional_part() const;
         int getRawBits( void ) const;
         void setRawBits( int const raw );
-        void operator=(const Fixed &org);
+        Fixed& operator=(const Fixed &org);
         bool operator>(const Fixed &org) const;
         bool operator<(const Fixed &org) const;
         bool operator>=(const Fixed &org) const;
         bool operator<=(const Fixed &org) const;
         bool operator==(const Fixed &org) const;
         bool operator!=(const Fixed &org) const;
-        int operator+(const Fixed &org) const;
-        int operator-(const Fixed &org) const;
-        int operator*(const Fixed &org) const;
-        int operator/(const Fixed &org) const;
+        float operator+(const Fixed &org) const;
+        float operator-(const Fixed &org) const;
+        float operator*(const Fixed &org) const;
+        float operator/(const Fixed &org) const;
         Fixed&  operator++();
         Fixed&  operator--();
-        Fixed&  operator++(int) ;
-        Fixed&  operator--(int);
+        Fixed  operator++(int) ;
+        Fixed  operator--(int);
         static Fixed& max(Fixed &org, Fixed &org1);
         static Fixed& min(Fixed &org, Fixed &org1);
+        static const Fixed& min(const Fixed &org, const Fixed &org1);
+        static const Fixed& max(const Fixed &org, const Fixed &org1);
         ~Fixed();
 };
 
