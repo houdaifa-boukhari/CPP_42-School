@@ -6,7 +6,7 @@
 /*   By: hel-bouk <hel-bouk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 13:14:18 by hel-bouk          #+#    #+#             */
-/*   Updated: 2024/11/08 16:14:57 by hel-bouk         ###   ########.fr       */
+/*   Updated: 2024/11/11 17:59:12 by hel-bouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,11 @@ class ScavTrap : public ClapTrap
     public:
         ScavTrap();
         ScavTrap(std::string name);
-        ScavTrap(ScavTrap const & scav);
-        ScavTrap & operator=(ScavTrap const & scav);
+        ScavTrap(ScavTrap const &org);
+        ScavTrap& operator=(ScavTrap const & org);
         ~ScavTrap();
-        void challengeNewcomer();
+        void guardGate();
+        void attack(const std::string& target) override;
 };
 
 #endif

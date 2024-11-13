@@ -6,7 +6,7 @@
 /*   By: hel-bouk <hel-bouk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 11:27:26 by hel-bouk          #+#    #+#             */
-/*   Updated: 2024/11/05 13:13:29 by hel-bouk         ###   ########.fr       */
+/*   Updated: 2024/11/11 17:46:21 by hel-bouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 
 class ClapTrap
 {
-	private :
+	protected :
 		std::string name;
 		int         hit_point;
 		int         energ_point;

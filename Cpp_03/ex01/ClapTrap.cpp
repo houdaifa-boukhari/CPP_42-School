@@ -6,7 +6,7 @@
 /*   By: hel-bouk <hel-bouk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 11:49:47 by hel-bouk          #+#    #+#             */
-/*   Updated: 2024/11/05 13:13:40 by hel-bouk         ###   ########.fr       */
+/*   Updated: 2024/11/11 17:55:41 by hel-bouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ ClapTrap::ClapTrap()
     this->hit_point = 10;
     this->energ_point = 10;
     this->attack_damage = 0;
-    std::cout << "Default constructor called\n";
+    std::cout << "Default Claptrap constructor called\n";
 }
 
 ClapTrap::ClapTrap(std::string name)
@@ -27,7 +27,7 @@ ClapTrap::ClapTrap(std::string name)
     this->hit_point = 10;
     this->energ_point = 10;
     this->attack_damage = 0;
-    std::cout << "Assiment constructor called\n";
+    std::cout << "Assiment Claptrap constructor called\n";
 }
 
 ClapTrap::ClapTrap(const ClapTrap& org)
@@ -89,5 +89,5 @@ ClapTrap& ClapTrap::operator=(const ClapTrap& org)
 }
 ClapTrap::~ClapTrap()
 {
-    std::cout << "Deconstructor called\n";
+    std::cout << "ClapTrap Deconstructor called\n";
 }

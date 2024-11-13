@@ -66,6 +66,18 @@
         "vector": "cpp",
         "__functional_03": "cpp",
         "memory_resource": "cpp",
-        "filesystem": "cpp"
+        "filesystem": "cpp",
+        "*.tcc": "cpp",
+        "charconv": "cpp",
+        "clocale": "cpp",
+        "compare": "cpp",
+        "concepts": "cpp",
+        "numeric": "cpp",
+        "random": "cpp",
+        "format": "cpp",
+        "numbers": "cpp",
+        "span": "cpp",
+        "variant": "cpp",
+        "text_encoding": "cpp"
     }
 }
