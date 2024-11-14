@@ -5,24 +5,21 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: hel-bouk <hel-bouk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/11 17:41:05 by hel-bouk          #+#    #+#             */
-/*   Updated: 2024/11/13 19:04:22 by hel-bouk         ###   ########.fr       */
+/*   Created: 2024/11/13 21:28:00 by hel-bouk          #+#    #+#             */
+/*   Updated: 2024/11/13 21:31:21 by hel-bouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
 int main()
 {
-    ScavTrap scav("hel-bouk");
-    ClapTrap clap("aaskal");
-
-    scav.attack("aaskal");
-    clap.attack("hel-bouk");
-    scav.guardGate();
-    scav.takeDamage(10);
-    clap.takeDamage(10);
-    scav.beRepaired(10);
-    clap.beRepaired(10);
+    FragTrap frag("hel-bouk");
+    ClapTrap clap("hel-bouk");
+    frag.attack("hel-bouk");
+    frag.takeDamage(10);
+    frag.beRepaired(10);
+    frag.highFivesGuys();
     return (0);
 }
+

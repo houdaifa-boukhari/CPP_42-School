@@ -6,7 +6,7 @@
 /*   By: hel-bouk <hel-bouk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 11:27:26 by hel-bouk          #+#    #+#             */
-/*   Updated: 2024/11/14 11:46:29 by hel-bouk         ###   ########.fr       */
+/*   Updated: 2024/11/13 22:40:21 by hel-bouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class ClapTrap
 		ClapTrap();
 		ClapTrap(std::string name);
 		ClapTrap(const ClapTrap& org);
-		virtual void attack(const std::string& target);
+		void attack(const std::string& target);
 		void takeDamage(unsigned int amount);
 		void beRepaired(unsigned int amount);
 		ClapTrap& operator=(const ClapTrap& org);

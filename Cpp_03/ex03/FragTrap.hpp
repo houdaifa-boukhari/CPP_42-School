@@ -1,28 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hel-bouk <hel-bouk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/11 17:41:05 by hel-bouk          #+#    #+#             */
-/*   Updated: 2024/11/13 19:04:22 by hel-bouk         ###   ########.fr       */
+/*   Created: 2024/11/13 20:32:08 by hel-bouk          #+#    #+#             */
+/*   Updated: 2024/11/14 12:08:07 by hel-bouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
+#ifndef FRAGTRAP_HPP
+# define FRAGTRAP_HPP
 
-int main()
+#include "ClapTrap.hpp"
+
+class FragTrap : virtual public ClapTrap
 {
-    ScavTrap scav("hel-bouk");
-    ClapTrap clap("aaskal");
+    public :
+        FragTrap();
+        FragTrap(std::string name);
+        FragTrap(const FragTrap &frag);
+        FragTrap& operator=(FragTrap const & frag);
+        void highFivesGuys(void);
+        ~FragTrap();
+};
 
-    scav.attack("aaskal");
-    clap.attack("hel-bouk");
-    scav.guardGate();
-    scav.takeDamage(10);
-    clap.takeDamage(10);
-    scav.beRepaired(10);
-    clap.beRepaired(10);
-    return (0);
-}
+
+# endif

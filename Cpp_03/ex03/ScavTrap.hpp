@@ -1,28 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hel-bouk <hel-bouk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/11 17:41:05 by hel-bouk          #+#    #+#             */
-/*   Updated: 2024/11/13 19:04:22 by hel-bouk         ###   ########.fr       */
+/*   Created: 2024/11/05 13:14:18 by hel-bouk          #+#    #+#             */
+/*   Updated: 2024/11/14 12:08:01 by hel-bouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
+#ifndef SCAVTRAP_HPP
+#define SCAVTRAP_HPP
 
-int main()
+#include "ClapTrap.hpp"
+
+class ScavTrap : virtual public ClapTrap
 {
-    ScavTrap scav("hel-bouk");
-    ClapTrap clap("aaskal");
+    public:
+        ScavTrap();
+        ScavTrap(std::string name);
+        ScavTrap(ScavTrap const &org);
+        ScavTrap& operator=(ScavTrap const & org);
+        ~ScavTrap();
+        void guardGate();
+        void attack(const std::string& target);
+};
 
-    scav.attack("aaskal");
-    clap.attack("hel-bouk");
-    scav.guardGate();
-    scav.takeDamage(10);
-    clap.takeDamage(10);
-    scav.beRepaired(10);
-    clap.beRepaired(10);
-    return (0);
-}
+#endif
