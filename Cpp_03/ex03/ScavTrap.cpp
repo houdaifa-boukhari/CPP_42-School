@@ -6,12 +6,11 @@
 /*   By: hel-bouk <hel-bouk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 07:46:59 by hel-bouk          #+#    #+#             */
-/*   Updated: 2024/11/14 13:16:56 by hel-bouk         ###   ########.fr       */
+/*   Updated: 2024/11/15 15:40:06 by hel-bouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
-
 
 ScavTrap::ScavTrap() : ClapTrap()
 {

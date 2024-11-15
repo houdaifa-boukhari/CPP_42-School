@@ -6,7 +6,7 @@
 /*   By: hel-bouk <hel-bouk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 21:43:31 by hel-bouk          #+#    #+#             */
-/*   Updated: 2024/11/14 13:39:37 by hel-bouk         ###   ########.fr       */
+/*   Updated: 2024/11/15 15:38:55 by hel-bouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,9 @@ DiamondTrap::DiamondTrap()
 DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name + "_clap_name")
 {
     this->DiamondTrap::name = name;
-    this->hit_point = FragTrap::hit_point;
-    this->attack_damage = FragTrap::attack_damage;
-    this->energ_point = ScavTrap::energ_point;
-    if (this->attack_damage != 30)
-        this->attack_damage += 10;  
+    this->energ_point = energ_point;
+    this->hit_point = hit_point;
+    this->attack_damage = attack_damage + 10;
     std::cout << "DiamondTrap Assiment is called\n";
 }
 
