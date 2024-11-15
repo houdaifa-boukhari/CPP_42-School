@@ -1,8 +1,8 @@
 NAME = ClapTrap
-HEADER = ClapTrap.hpp ScavTrap.hpp
+HEADER = ClapTrap.hpp
 CPP = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
-SRC = ClapTrap.cpp main.cpp ScavTrap.cpp
+SRC = ClapTrap.cpp main.cpp
 OBJS = $(SRC:.cpp=.o)
 RM = rm -f
 

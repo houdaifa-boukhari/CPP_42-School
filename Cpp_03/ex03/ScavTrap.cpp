@@ -6,7 +6,7 @@
 /*   By: hel-bouk <hel-bouk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 07:46:59 by hel-bouk          #+#    #+#             */
-/*   Updated: 2024/11/15 15:40:06 by hel-bouk         ###   ########.fr       */
+/*   Updated: 2024/11/15 16:23:24 by hel-bouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
     std::cout << "Assiment ScavTrap constructor called\n";
 }
 
-ScavTrap::ScavTrap(ScavTrap const &org) : ClapTrap(org) {}
+ScavTrap::ScavTrap(ScavTrap const &org) : ClapTrap(org) {std::cout << "ScavTrap copy Concstructer called\n";}
 
 ScavTrap &ScavTrap::operator=(ScavTrap const &org)
 {
@@ -38,6 +38,7 @@ ScavTrap &ScavTrap::operator=(ScavTrap const &org)
     this->hit_point = org.hit_point;
     this->energ_point = org.energ_point;
     this->attack_damage = org.attack_damage;
+    std::cout << "ScavTrap Assiment operator called\n";
     return (*this);
 }
 

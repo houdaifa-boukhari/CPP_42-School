@@ -6,7 +6,7 @@
 /*   By: hel-bouk <hel-bouk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 11:49:47 by hel-bouk          #+#    #+#             */
-/*   Updated: 2024/11/13 20:31:41 by hel-bouk         ###   ########.fr       */
+/*   Updated: 2024/11/15 16:38:55 by hel-bouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ ClapTrap::ClapTrap(const ClapTrap& org)
     this->hit_point = org.hit_point;
     this->energ_point = org.energ_point;
     this->attack_damage = org.attack_damage;
+    std::cout << "Claptrap copy Concstructer called\n";
 }
 
 void ClapTrap::attack(const std::string& target)
@@ -68,6 +69,7 @@ void ClapTrap::beRepaired(unsigned int amount)
         std::cout << this->name << " Can't be repaired , No Energy or Hit points left.\n";
         return ;
     }
+    this->energ_point--;
     if (this->hit_point + amount > 10)
         this->hit_point = 10;
     else
@@ -85,6 +87,7 @@ ClapTrap& ClapTrap::operator=(const ClapTrap& org)
         this->energ_point = org.energ_point;
         this->attack_damage = org.attack_damage;
     }
+    std::cout << "Claptrap assiment operator is clled\n";
     return (*this);
 }
 ClapTrap::~ClapTrap()
