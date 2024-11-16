@@ -6,7 +6,7 @@
 /*   By: hel-bouk <hel-bouk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 21:43:31 by hel-bouk          #+#    #+#             */
-/*   Updated: 2024/11/16 10:20:48 by hel-bouk         ###   ########.fr       */
+/*   Updated: 2024/11/16 12:04:13 by hel-bouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,9 @@ DiamondTrap::DiamondTrap()
     std::cout << "DiamondTrap constructer is called\n";
 }
 
-DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name + "_clap_name")
+DiamondTrap::DiamondTrap(std::string name)
 {
+    this->ClapTrap::name = name + "_clap_name";
     this->DiamondTrap::name = name;
     this->energ_point = energ_point;
     this->hit_point = hit_point;
