@@ -6,7 +6,7 @@
 /*   By: hel-bouk <hel-bouk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 21:05:40 by hel-bouk          #+#    #+#             */
-/*   Updated: 2024/11/13 21:32:14 by hel-bouk         ###   ########.fr       */
+/*   Updated: 2024/11/16 10:19:51 by hel-bouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 FragTrap::FragTrap()
 {
+    this->name = "Unkown";
     this->hit_point = 100;
     this->energ_point = 100;
     this->attack_damage = 30;
@@ -38,14 +39,15 @@ FragTrap::FragTrap(const FragTrap &frag)
     std::cout << "Fragtrap copy constructer is called\n";
 }
 
- FragTrap& FragTrap::operator=(FragTrap const & frag)
+ FragTrap& FragTrap::operator=(FragTrap const &frag)
  {
-    if (this == &frag)
-        return (*this);
-    this->name = frag.name;
-    this->hit_point = frag.hit_point;
-    this->energ_point = frag.energ_point;
-    this->attack_damage = frag.attack_damage;
+    if (this != &frag)
+    {
+        this->name = frag.name;
+        this->hit_point = frag.hit_point;
+        this->energ_point = frag.energ_point;
+        this->attack_damage = frag.attack_damage;
+    }
     std::cout << "Fragtrap copy Assiment is called\n";
     return (*this);
  }

@@ -6,7 +6,7 @@
 /*   By: hel-bouk <hel-bouk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 11:49:47 by hel-bouk          #+#    #+#             */
-/*   Updated: 2024/11/15 16:38:55 by hel-bouk         ###   ########.fr       */
+/*   Updated: 2024/11/16 10:05:44 by hel-bouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ ClapTrap::ClapTrap(std::string name)
     this->hit_point = 10;
     this->energ_point = 10;
     this->attack_damage = 0;
-    std::cout << "Assiment Claptrap constructor called\n";
+    std::cout << "Assiment Claptrap " << this->name <<  " constructor called\n";
 }
 
 ClapTrap::ClapTrap(const ClapTrap& org)
@@ -42,45 +42,41 @@ ClapTrap::ClapTrap(const ClapTrap& org)
 void ClapTrap::attack(const std::string& target)
 {
     if (this->energ_point <= 0 || this->hit_point  <= 0)
-    {
         std::cout << this->name << " Can't attack , No Energy or Hit points left.\n";
-        return ;
+    else
+    {
+        this->energ_point--;
+        std::cout << "ClapTrap " << this->name << " attacks " << target
+            << ", causing " << this->attack_damage << " points of damage!\n";
     }
-    this->energ_point = -1;
-    std::cout << "ClapTrap " << this->name << " attacks " << target
-                  << ", causing " << this->attack_damage << " points of damage!\n";
 }
 
 void ClapTrap::takeDamage(unsigned int amount)
 {
-    if (this->hit_point <= 0 || this->energ_point <= 0)
+    if (this->hit_point <= 0)
+        std::cout << this->name << " Can't take damage , No Hit points left.\n";
+    else
     {
-        std::cout << this->name << " Can't take damage , No Energy or Hit points left.\n";
-        return ;
+        this->hit_point -= amount;
+        std::cout << this->name << " takes " << amount << " points of damage!\n";
     }
-    this->hit_point -= amount;
-    std::cout << this->name << " takes " << amount << " points of damage!\n";
 }
 
 void ClapTrap::beRepaired(unsigned int amount)
 {
     if (this->hit_point <= 0 || this->energ_point <= 0)
-    {
         std::cout << this->name << " Can't be repaired , No Energy or Hit points left.\n";
-        return ;
-    }
-    this->energ_point--;
-    if (this->hit_point + amount > 10)
-        this->hit_point = 10;
     else
+    {
+        this->energ_point--;
         this->hit_point += amount;
-    std::cout << this->name << " has been repaired by " << amount << " points!\n";
+        std::cout << this->name << " has been repaired by " << amount << " points!\n";
+    }
 }
-
 
 ClapTrap& ClapTrap::operator=(const ClapTrap& org)
 {
-    if (this == &org)
+    if (this != &org)
     {
         this->name = org.name;
         this->hit_point = org.hit_point;
@@ -90,7 +86,8 @@ ClapTrap& ClapTrap::operator=(const ClapTrap& org)
     std::cout << "Claptrap assiment operator is clled\n";
     return (*this);
 }
+
 ClapTrap::~ClapTrap()
 {
-    std::cout << "ClapTrap Deconstructor called\n";
+    std::cout << "Claptrap " << this->name << " is destroyed\n";
 }
