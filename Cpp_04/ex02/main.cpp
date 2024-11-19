@@ -6,7 +6,7 @@
 /*   By: hel-bouk <hel-bouk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/16 13:02:39 by hel-bouk          #+#    #+#             */
-/*   Updated: 2024/11/17 22:21:28 by hel-bouk         ###   ########.fr       */
+/*   Updated: 2024/11/18 09:49:10 by hel-bouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@ int main()
 {
     atexit(ll);
     {
-        Animal *animals[6];
-    
+        AAnimal *animals[6];
+
         for (int i = 0; i < 6; i++)
         {
             if (((i + 1) % 2) != 0)

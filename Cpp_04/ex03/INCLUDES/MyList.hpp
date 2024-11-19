@@ -1,31 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   MyList.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hel-bouk <hel-bouk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/16 12:55:39 by hel-bouk          #+#    #+#             */
-/*   Updated: 2024/11/17 21:52:52 by hel-bouk         ###   ########.fr       */
+/*   Created: 2024/11/19 18:13:44 by hel-bouk          #+#    #+#             */
+/*   Updated: 2024/11/19 19:22:37 by hel-bouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_HPP
-# define CAT_HPP
+#ifndef MYLIST_HPP
+#define MYLIST_HPP
 
-#include "Animal.hpp"
-#include "../INCLUDES/Brain.hpp"
+#include "AMateria.hpp"
 
-class Cat : public Animal
-{
-    private :
-        Brain *brain;
-    public :
-        Cat();
-        Cat(const Cat& cat);
-        Cat& operator=(const Cat& cat);
-        void makeSound() const;
-        ~Cat();
-};
+class AMateria;
 
-# endif
+typedef struct s_list
+{   
+    typedef struct s_list t_list;
+    AMateria *ptr;
+    t_list   *next;
+    void    add_back(t_list **head, AMateria *ptr);
+}       t_list;
+
+#endif

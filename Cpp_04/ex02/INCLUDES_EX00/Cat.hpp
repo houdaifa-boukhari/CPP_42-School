@@ -6,17 +6,17 @@
 /*   By: hel-bouk <hel-bouk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/16 12:55:39 by hel-bouk          #+#    #+#             */
-/*   Updated: 2024/11/17 21:52:52 by hel-bouk         ###   ########.fr       */
+/*   Updated: 2024/11/18 09:26:55 by hel-bouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CAT_HPP
 # define CAT_HPP
 
-#include "Animal.hpp"
+#include "../INCLUDES/AAnimal.hpp"
 #include "../INCLUDES/Brain.hpp"
 
-class Cat : public Animal
+class Cat : public AAnimal
 {
     private :
         Brain *brain;
