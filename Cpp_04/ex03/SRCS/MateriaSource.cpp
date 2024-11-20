@@ -6,7 +6,7 @@
 /*   By: hel-bouk <hel-bouk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 19:43:30 by hel-bouk          #+#    #+#             */
-/*   Updated: 2024/11/19 21:46:56 by hel-bouk         ###   ########.fr       */
+/*   Updated: 2024/11/20 09:41:25 by hel-bouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ AMateria* MateriaSource::createMateria(std::string const& type)
             }
         }
     }
-    std::cout << "Failed created\n";
+    std::cout << type << " :: Failed created\n";
     return (0);
 }
 

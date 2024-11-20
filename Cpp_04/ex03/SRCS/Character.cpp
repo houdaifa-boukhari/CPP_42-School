@@ -6,7 +6,7 @@
 /*   By: hel-bouk <hel-bouk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 16:36:23 by hel-bouk          #+#    #+#             */
-/*   Updated: 2024/11/19 21:41:03 by hel-bouk         ###   ########.fr       */
+/*   Updated: 2024/11/20 09:39:56 by hel-bouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,12 +94,21 @@ Character& Character::operator=(const Character &other)
 
 Character::~Character()
 {
+    t_list *current = list;
+    t_list *next;
+
     for (int i = 0; i < 4; i++)
     {
         delete inventory[i];
         inventory[i] = NULL;   
     }
-    for (t_list *ptr = list; list ; ptr = ptr->next)
-        delete ptr, ptr = NULL;
+    while (current)
+    {
+        next = current->next;
+        delete current->ptr, current->ptr = NULL;
+        delete current, current = NULL;
+        current = next;
+        current = current->next;
+    }
     std::cout << "Character Deonstructer Is Called\n";
 }
