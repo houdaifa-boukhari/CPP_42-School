@@ -6,7 +6,7 @@
 /*   By: hel-bouk <hel-bouk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 09:40:06 by hel-bouk          #+#    #+#             */
-/*   Updated: 2024/11/20 09:59:11 by hel-bouk         ###   ########.fr       */
+/*   Updated: 2024/11/20 10:48:09 by hel-bouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,32 +20,6 @@ void ll()
 {
     system("leaks -q Interface");
 }
-// int main()
-// {
-//     IMateriaSource* src = new MateriaSource();
-//     src->learnMateria(new Ice());
-//     src->learnMateria(new Cure());
-//     std::cout << "-----------------------------------------\n";
-//     ICharacter* me = new Character("me");
-//     AMateria* tmp;
-//     tmp = src->createMateria("ice");
-//     std::cout << "-----------------------------------------\n";
-//     me->equip(tmp);
-//     std::cout << "-----------------------------------------\n";
-//     tmp = src->createMateria("cure");
-//     std::cout << "-----------------------------------------\n";
-//     printf("{%p}\n", tmp);
-//     me->equip(tmp);
-//     ICharacter* bob = new Character("bob");
-//     std::cout << "-----------------------------------------\n";
-//     me->use(0, *bob);
-//     me->use(1, *bob);
-//     std::cout << "-----------------------------------------\n";
-//     delete bob;
-//     delete me;
-//     delete src;
-//     return 0;
-// }
 
 void customTests(void)
 {
@@ -59,12 +33,10 @@ void customTests(void)
 	materiaMaker->learnMateria(new Cure());
 	materiaMaker->learnMateria(new Ice());
 	materiaMaker->learnMateria(new Cure());
-	materiaMaker->learnMateria(new Cure()); 
     std::cout << "---------------------------------------\n";
 	stackMaker.learnMateria(new Ice());
 	stackMaker.learnMateria(new Cure());
 	stackMaker.learnMateria(new Ice());
-	stackMaker.learnMateria(new Cure());
 	stackMaker.learnMateria(new Cure());
     std::cout << "---------------------------------------\n";
 	bob->equip(materiaMaker->createMateria("non")); 
@@ -72,14 +44,12 @@ void customTests(void)
 	bob->equip(materiaMaker->createMateria("cure"));
 	bob->equip(materiaMaker->createMateria("ice"));
 	bob->equip(materiaMaker->createMateria("cure"));
-	bob->equip(materiaMaker->createMateria("ice")); 
     std::cout << "---------------------------------------\n";
 	ned.equip(stackMaker.createMateria("non")); 
 	ned.equip(stackMaker.createMateria("ice"));
 	ned.equip(stackMaker.createMateria("cure"));
 	ned.equip(stackMaker.createMateria("ice"));
 	ned.equip(stackMaker.createMateria("cure"));
-	ned.equip(stackMaker.createMateria("ice")); 
     std::cout << "---------------------------------------\n";
 	bob->use(-1, ned);
 	bob->use(0, ned);
@@ -134,12 +104,44 @@ void subjectTest(void)
 	delete src;
 	std::cout << "-----------------------Subject Test END-----------------------" << std::endl;;
 }
-
+#include <stdlib.h>
 int main(void)
 {
-    // atexit(ll);
+    atexit(ll);
 	subjectTest();
     std::cout << std::endl;
 	customTests();
+	AMateria *ice =new Ice;
+	AMateria *ice2 = ice->clone();
+	std::cout << ice2->getType() << std::endl;
+	ICharacter *char1 = new Character("char1");
+	printf("{%p}\n", char1);
+	ice->use(*char1);
+	char1->equip(new Ice);
+	char1->equip(new Ice);
+	char1->equip(new Ice);
+	char1->equip(new Ice);
+	char1->unequip(0);
+	char1->equip(new Cure);
+	char1->unequip(1);
+	char1->equip(new Cure);
+	char1->unequip(0);
+	char1->unequip(2);
+	char1->unequip(3);
+	char1->equip(new Cure);
+	char1->use(0, *char1);
+	IMateriaSource *m = new MateriaSource;
+	m->learnMateria(new Ice);
+	m->learnMateria(new Ice);
+	m->learnMateria(new Ice);
+	m->learnMateria(new Cure);
+	delete ice;
+	ice = m->createMateria("cure");
+	if (ice)
+	ice->use(*char1);
+	delete char1;
+	delete m;
+	delete ice;
+	delete ice2;
 	return 0;
 }

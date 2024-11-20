@@ -6,7 +6,7 @@
 /*   By: hel-bouk <hel-bouk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 16:36:23 by hel-bouk          #+#    #+#             */
-/*   Updated: 2024/11/20 09:39:56 by hel-bouk         ###   ########.fr       */
+/*   Updated: 2024/11/20 10:29:39 by hel-bouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ void Character::equip(AMateria* m)
         if (this->inventory[i] == NULL)
         {
             this->inventory[i] = m;
-            break ;
+            return ;
         }
     }
 }
@@ -108,7 +108,6 @@ Character::~Character()
         delete current->ptr, current->ptr = NULL;
         delete current, current = NULL;
         current = next;
-        current = current->next;
     }
     std::cout << "Character Deonstructer Is Called\n";
 }
