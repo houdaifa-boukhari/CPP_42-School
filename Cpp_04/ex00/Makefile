@@ -1,5 +1,5 @@
 NAME = Animal
-HEADER = ./INCLUDES_EX00/Animal.hpp ./INCLUDES_EX00/Cat.hpp ./INCLUDES_EX00/Dog.hpp
+HEADER = ./INCLUDES/Animal.hpp ./INCLUDES/Cat.hpp ./INCLUDES/Dog.hpp
 CPP = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 SRC = ./SRCS/Animal.cpp ./SRCS/Cat.cpp ./SRCS/Dog.cpp  ./SRCS/WrongAnimal.cpp ./SRCS/WrongCat.cpp main.cpp

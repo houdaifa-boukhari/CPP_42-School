@@ -6,14 +6,14 @@
 /*   By: hel-bouk <hel-bouk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/16 13:02:39 by hel-bouk          #+#    #+#             */
-/*   Updated: 2024/11/17 16:31:47 by hel-bouk         ###   ########.fr       */
+/*   Updated: 2024/11/21 09:08:57 by hel-bouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./INCLUDES_EX00/Dog.hpp"
-#include "./INCLUDES_EX00/Cat.hpp"
-#include "./INCLUDES_EX00/WrongCat.hpp"
-#include "./INCLUDES_EX00/WrongAnimal.hpp"
+#include "./INCLUDES/Dog.hpp"
+#include "./INCLUDES/Cat.hpp"
+#include "./INCLUDES/WrongCat.hpp"
+#include "./INCLUDES/WrongAnimal.hpp"
 
 int main()
 {

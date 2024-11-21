@@ -6,11 +6,11 @@
 /*   By: hel-bouk <hel-bouk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/16 13:00:16 by hel-bouk          #+#    #+#             */
-/*   Updated: 2024/11/17 16:31:47 by hel-bouk         ###   ########.fr       */
+/*   Updated: 2024/11/21 09:15:11 by hel-bouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../INCLUDES_EX00/Dog.hpp"
+#include "../INCLUDES/Dog.hpp"
 
 Dog::Dog()
 {
