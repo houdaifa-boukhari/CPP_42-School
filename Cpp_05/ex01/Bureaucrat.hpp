@@ -6,7 +6,7 @@
 /*   By: hel-bouk <hel-bouk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/30 15:41:02 by hel-bouk          #+#    #+#             */
-/*   Updated: 2024/12/11 16:05:43 by hel-bouk         ###   ########.fr       */
+/*   Updated: 2024/12/11 18:43:38 by hel-bouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 #define BUREAUCRAT_HPP
 
 #include <iostream>
+#include "Form.hpp"
+
+class Form;
 
 class Bureaucrat
 {
@@ -28,6 +31,7 @@ class Bureaucrat
         int  getGrade();
         void increment();
         void decrement();
+        void signForm(Form form);
         void setGarde(int new_grade);
         Bureaucrat &operator=(const Bureaucrat &other);
         ~Bureaucrat();

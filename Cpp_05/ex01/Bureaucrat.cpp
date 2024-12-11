@@ -6,7 +6,7 @@
 /*   By: hel-bouk <hel-bouk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/30 15:39:27 by hel-bouk          #+#    #+#             */
-/*   Updated: 2024/12/11 16:07:22 by hel-bouk         ###   ########.fr       */
+/*   Updated: 2024/12/11 18:58:36 by hel-bouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,6 +83,14 @@ Bureaucrat &Bureaucrat::operator=(const Bureaucrat &other)
     if (Debug)
         std::cout << "Bureaucrat Assiment Operator Constructer is Called\n";
     return (*this);
+}
+
+void Bureaucrat::signForm(Form form)
+{
+    if (form.isSigned())
+        std::cout << this->getName() << " signed " << form.getName() << std::endl;
+    else
+        std::cout << this->getName() << " couldn't sign " << form.getName() << " because Not have a permetion"<< std::endl;
 }
 
 std::ostream &operator<<(std::ostream &cout, Bureaucrat &other)
