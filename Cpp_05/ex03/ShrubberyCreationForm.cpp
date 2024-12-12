@@ -43,7 +43,7 @@ void ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 		throw (AForm::GradeTooLowException());
 	else if (!this->isSigned())
 		throw (this->getName() + " Is Not Signed");
-	std::ofstream outFile(fileName);
+	std::ofstream outFile(fileName.c_str());
 	if (!outFile.is_open())
 		throw ("File is not open");
 	

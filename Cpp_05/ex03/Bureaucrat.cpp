@@ -85,7 +85,7 @@ Bureaucrat &Bureaucrat::operator=(const Bureaucrat &other)
 	return (*this);
 }
 
-void Bureaucrat::signForm(AForm form)
+void Bureaucrat::signForm(AForm &form)
 {
 	if (form.isSigned())
 		std::cout << this->getName() << " signed " << form.getName() << std::endl;

@@ -31,7 +31,7 @@ class Bureaucrat
         int  getGrade() const;
         void increment();
         void decrement();
-        void signForm(AForm form);
+        void signForm(AForm &form);
         void setGarde(int new_grade);
         Bureaucrat &operator=(const Bureaucrat &other);
         ~Bureaucrat();
