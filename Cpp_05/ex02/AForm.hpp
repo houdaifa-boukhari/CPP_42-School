@@ -6,7 +6,7 @@
 /*   By: hel-bouk <hel-bouk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 16:09:18 by hel-bouk          #+#    #+#             */
-/*   Updated: 2024/12/11 21:06:11 by hel-bouk         ###   ########.fr       */
+/*   Updated: 2024/12/12 10:44:13 by hel-bouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ class AForm
         std::string getName() const;
         int getGradeToSign() const;
         int getGradeToExec() const;
-        bool isSigned();
+        bool isSigned() const;
         AForm(const std::string name, bool  is_signed, const int GradeToSign, const int GradeToExec);
         AForm(const AForm &other);
         AForm &operator=(const AForm &other);
