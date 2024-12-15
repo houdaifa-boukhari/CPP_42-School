@@ -6,7 +6,7 @@
 /*   By: hel-bouk <hel-bouk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 12:22:42 by hel-bouk          #+#    #+#             */
-/*   Updated: 2024/12/12 12:43:20 by hel-bouk         ###   ########.fr       */
+/*   Updated: 2024/12/14 15:38:32 by hel-bouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,11 @@ int main()
 		Form *p3 = RandomIntern.makeForm("PresidentialPardonForm", "something");
 		Form *p4 = RandomIntern.makeForm("non", "Unkown");
 		std::cout << "---------------------\n";
-		p1->beSigned(b1), p1->execute(b1);
+		p1->beSigned(b1), b1.executeForm(*p1);
 		std::cout << "---------------------\n";
-		p2->beSigned(b1), p2->execute(b1);
+		p2->beSigned(b1), b1.executeForm(*p2);
 		std::cout << "---------------------\n";
-		p3->beSigned(b1), p3->execute(b1);
+		p3->beSigned(b1), b1.executeForm(*p3);
 		std::cout << "---------------------\n";
 		delete p1, delete p2, delete p3, delete p4;
 		std::cout << "-------------::Finish::-----------------\n";

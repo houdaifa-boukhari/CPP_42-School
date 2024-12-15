@@ -6,7 +6,7 @@
 /*   By: hel-bouk <hel-bouk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 21:37:43 by hel-bouk          #+#    #+#             */
-/*   Updated: 2024/12/12 11:16:46 by hel-bouk         ###   ########.fr       */
+/*   Updated: 2024/12/14 15:01:36 by hel-bouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,8 +43,8 @@ void RobotomyRequestForm::execute(Bureaucrat const &executor) const
     else if (!this->isSigned())
 		throw (this->getName() + " Is Not Signed");
     std::cout << "Drilling noise\n";
-    srand(time(NULL));
-    if (rand() % 2)
+    std::srand(std::time(NULL));
+    if (std::rand() % 2)
         std::cout << target << " has been robotomized successfully\n";
     else
         std::cout << target << " has been failed to robotomized\n";

@@ -5,26 +5,28 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: hel-bouk <hel-bouk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/11 12:22:42 by hel-bouk          #+#    #+#             */
-/*   Updated: 2024/12/14 15:32:01 by hel-bouk         ###   ########.fr       */
+/*   Created: 2024/12/15 15:09:40 by hel-bouk          #+#    #+#             */
+/*   Updated: 2024/12/15 17:48:25 by hel-bouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Bureaucrat.hpp"
+#include "ScalarConverter.hpp"
 
-int main()
+int main(int ac, char **av)
 {
-    try
-    {
-        Bureaucrat military("hel-bouk", 1);
-        std::cout << military;
-        military.decrement();
-        std::cout << military;
-        military.increment();
-        std::cout << military;
-    }
-    catch (const std::exception &e)
-    {
-        std::cout << "Caught exception: " << e.what() << std::endl;
-    }
+	if (ac != 2)
+	{
+		std::cout << "Use ./convert String" << std::endl;
+		return (1);
+	}
+	try {
+		// std::cout << std::stoll(av[1]) << "\n";
+		ScalarConverter::convert(av[1]);
+	}
+	catch (...)
+	{
+		std::cout << "char: impossible\nint: impossible\n"\
+					"float: impossible\ndouble: impossible\n"; 
+	}
+	return (0);
 }

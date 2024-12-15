@@ -1,8 +1,8 @@
-NAME = sed
-HEADER = sed.hpp
+NAME = convert
+HEADER = ScalarConverter.hpp
 CPP = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
-SRC = main.cpp sed.cpp
+SRC = main.cpp ScalarConverter.cpp
 OBJS = $(SRC:.cpp=.o)
 RM = rm -f
 
@@ -14,7 +14,7 @@ $(NAME) : $(OBJS)
 $(OBJS) : $(HEADER)
 
 clean:
-	$(RM) $(OBJS)
+	$(RM) $(OBJS) *_shrubbery
 
 fclean: clean
 	$(RM) $(NAME)

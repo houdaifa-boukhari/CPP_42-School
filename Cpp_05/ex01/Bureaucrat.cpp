@@ -6,13 +6,13 @@
 /*   By: hel-bouk <hel-bouk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/30 15:39:27 by hel-bouk          #+#    #+#             */
-/*   Updated: 2024/12/11 18:58:36 by hel-bouk         ###   ########.fr       */
+/*   Updated: 2024/12/14 15:18:22 by hel-bouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 
-bool Debug = false;
+bool Debug = true;
 
 Bureaucrat::Bureaucrat() : name("hel-bouk")
 {
@@ -102,5 +102,5 @@ std::ostream &operator<<(std::ostream &cout, Bureaucrat &other)
 Bureaucrat::~Bureaucrat()
 {
     if (Debug)
-        std::cout << "Bureaucrat " << this->name << "is Destroyed\n";
+        std::cout << "Bureaucrat " << this->name << " is Destroyed\n";
 }

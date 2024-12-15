@@ -6,7 +6,7 @@
 /*   By: hel-bouk <hel-bouk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 16:09:18 by hel-bouk          #+#    #+#             */
-/*   Updated: 2024/12/12 10:44:13 by hel-bouk         ###   ########.fr       */
+/*   Updated: 2024/12/15 15:01:55 by hel-bouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ class AForm
         AForm(const AForm &other);
         AForm &operator=(const AForm &other);
         void beSigned(Bureaucrat military);
-        ~AForm();
+        virtual ~AForm();
         class GradeTooHighException : public std::exception
         {
             public :

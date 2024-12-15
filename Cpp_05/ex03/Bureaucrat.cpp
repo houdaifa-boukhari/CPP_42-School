@@ -6,13 +6,13 @@
 /*   By: hel-bouk <hel-bouk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/30 15:39:27 by hel-bouk          #+#    #+#             */
-/*   Updated: 2024/12/12 10:42:43 by hel-bouk         ###   ########.fr       */
+/*   Updated: 2024/12/14 15:35:56 by hel-bouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 
-bool Debug = false;
+bool Debug = true;
 
 Bureaucrat::Bureaucrat() : name("hel-bouk")
 {
@@ -97,6 +97,8 @@ void Bureaucrat::executeForm(AForm const & form)
 {
 	if (!(form.isSigned() || form.getGradeToExec() < this->getGrade()))
 		throw (this->name + " can't execute form because you don't have permission.");
+	form.execute(*this);
+	std::cout << this->name << " executed " << form.getName() << std::endl;
 }
 
 std::ostream &operator<<(std::ostream &cout, Bureaucrat &other)
@@ -108,5 +110,5 @@ std::ostream &operator<<(std::ostream &cout, Bureaucrat &other)
 Bureaucrat::~Bureaucrat()
 {
 	if (Debug)
-		std::cout << "Bureaucrat " << this->name << "is Destroyed\n";
+		std::cout << "Bureaucrat " << this->name << " is Destroyed\n";
 }

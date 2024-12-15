@@ -6,7 +6,7 @@
 /*   By: hel-bouk <hel-bouk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 12:22:42 by hel-bouk          #+#    #+#             */
-/*   Updated: 2024/12/12 11:27:03 by hel-bouk         ###   ########.fr       */
+/*   Updated: 2024/12/14 15:33:21 by hel-bouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,15 +26,15 @@ int main()
 		std::cout << "----------------\n";
 		std::cout << shrubbery;
 		std::cout << "----------------\n";
-		shrubbery.execute(b1);
+		b1.executeForm(shrubbery);
 		std::cout << "-------------------------------\n";
 		RobotomyRequestForm	robot("IJ_01");
 		robot.beSigned(b1);
-		robot.execute(b1);
+		b1.executeForm(robot);
 		std::cout << "-------------------------------\n";
 		PresidentialPardonForm president("someone");
 		president.beSigned(b1);
-		president.execute(b1);
+		b1.executeForm(president);
 		std::cout << "-------------::Finish::-----------------\n";
    }
    catch(const std::exception& e)
