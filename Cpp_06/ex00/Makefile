@@ -14,7 +14,7 @@ $(NAME) : $(OBJS)
 $(OBJS) : $(HEADER)
 
 clean:
-	$(RM) $(OBJS) *_shrubbery
+	$(RM) $(OBJS)
 
 fclean: clean
 	$(RM) $(NAME)

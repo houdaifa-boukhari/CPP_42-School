@@ -6,7 +6,7 @@
 /*   By: hel-bouk <hel-bouk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/15 15:17:51 by hel-bouk          #+#    #+#             */
-/*   Updated: 2024/12/15 17:51:33 by hel-bouk         ###   ########.fr       */
+/*   Updated: 2024/12/15 22:49:31 by hel-bouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,15 +45,37 @@ bool ValidInput(std::string data)
 	return (true);
 }
 
+void ConvertToFloat(std::string data)
+{
+	double 	n = 0;
+	long long nb;
+
+	if (!(data.length() == 1 && !std::isdigit(data[0])))
+		n = std::stof(data.c_str());
+	nb = n;
+	if (data.length() != 1 || std::isdigit(data[0]))
+	{
+		if (std::isdigit(data[0]) && data.length() == 1)
+			std::cout << "float: " << n << ".0f" << std::endl;
+		else
+			std::cout << "float: " << n << (!(n - nb) ? ".0" : "") << "f" << std::endl;
+	}
+	else
+		std::cout << "float: " << static_cast<int>(data.c_str()[0]) << ".0f" << std::endl;
+}
+
 void ConvertToInt(std::string data)
 {
-	long long n = std::stoll(data.c_str());
+	long long n = 0;
 
+	if (!(data.length() == 1 && !std::isdigit(data[0])))
+		n = std::stoll(data.c_str());
 	if (n > INT_MAX || n < INT_MIN)
 		std::cout << "int: impossible\n";
+	else if (data.length() != 1 || std::isdigit(data[0]))
+		std::cout << "int: " << n << std::endl;
 	else
-		std::cout << "int: " << n << "\n";
-	
+		std::cout << "int: " << static_cast<int>(data.c_str()[0]) << std::endl;
 }
 
 void ConvertToChar(std::string data)
@@ -86,4 +108,5 @@ void ScalarConverter::convert(std::string data)
 		throw ("Invalid Input");
 	ConvertToChar(data);
 	ConvertToInt(data);
+	ConvertToFloat(data);
 }
