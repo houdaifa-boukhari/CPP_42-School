@@ -6,7 +6,7 @@
 /*   By: hel-bouk <hel-bouk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 12:58:11 by hel-bouk          #+#    #+#             */
-/*   Updated: 2024/12/16 15:16:59 by hel-bouk         ###   ########.fr       */
+/*   Updated: 2024/12/16 20:46:56 by hel-bouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define Serializer_HPP
 
 #include <iostream>
+#include <cstdint>
 #include "Data.hpp"
 
 struct s_data;
