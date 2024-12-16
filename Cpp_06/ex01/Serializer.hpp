@@ -6,7 +6,7 @@
 /*   By: hel-bouk <hel-bouk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 12:58:11 by hel-bouk          #+#    #+#             */
-/*   Updated: 2024/12/16 20:46:56 by hel-bouk         ###   ########.fr       */
+/*   Updated: 2024/12/16 20:49:23 by hel-bouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,9 @@
 # define Serializer_HPP
 
 #include <iostream>
-#include <cstdint>
 #include "Data.hpp"
+
+typedef unsigned long uintptr_t;
 
 struct s_data;
 typedef s_data Data;
