@@ -6,7 +6,7 @@
 /*   By: hel-bouk <hel-bouk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/15 15:17:51 by hel-bouk          #+#    #+#             */
-/*   Updated: 2024/12/16 16:00:15 by hel-bouk         ###   ########.fr       */
+/*   Updated: 2024/12/16 20:34:35 by hel-bouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -168,7 +168,7 @@ void ScalarConverter::convert(std::string data)
 {
 	SpecialInput(data);
 	if (!ValidInput(data))
-		throw ("Invalid Input");
+		throw (-1);
 	ConvertToChar(data);
 	ConvertToInt(data);
 	ConvertToFloat(data);
