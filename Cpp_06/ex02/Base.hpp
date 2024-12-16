@@ -6,7 +6,7 @@
 /*   By: hel-bouk <hel-bouk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 16:44:57 by hel-bouk          #+#    #+#             */
-/*   Updated: 2024/12/16 20:53:16 by hel-bouk         ###   ########.fr       */
+/*   Updated: 2024/12/16 20:56:16 by hel-bouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include <iostream>
 #include <ctime>
 #include <cstdlib>
+#include <typeinfo>
 
 class Base
 {
