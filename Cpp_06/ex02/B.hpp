@@ -1,30 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScalarConverter.hpp                                :+:      :+:    :+:   */
+/*   B.hpp                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hel-bouk <hel-bouk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/15 15:04:56 by hel-bouk          #+#    #+#             */
-/*   Updated: 2024/12/16 12:12:08 by hel-bouk         ###   ########.fr       */
+/*   Created: 2024/12/16 16:40:28 by hel-bouk          #+#    #+#             */
+/*   Updated: 2024/12/16 17:05:24 by hel-bouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ScalarConverter_HPP
-# define ScalarConverter_HPP
+#ifndef B_HPP
+# define B_hpp
 
-#include <iostream>
-#include <climits>
+#include "Base.hpp"
 
-class ScalarConverter
+class B : public Base
 {
-	private :
-		ScalarConverter();
-		ScalarConverter(const ScalarConverter &org);
-		ScalarConverter &operator=(const ScalarConverter &org);
-		~ScalarConverter();
 	public :
-		static void convert(std::string data);
+		void Sound(){std::cout << "B Class\n";}
 };
 
-#endif
+#endif 

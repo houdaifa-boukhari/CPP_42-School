@@ -1,30 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScalarConverter.hpp                                :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hel-bouk <hel-bouk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/15 15:04:56 by hel-bouk          #+#    #+#             */
-/*   Updated: 2024/12/16 12:12:08 by hel-bouk         ###   ########.fr       */
+/*   Created: 2024/12/16 16:48:27 by hel-bouk          #+#    #+#             */
+/*   Updated: 2024/12/16 17:25:13 by hel-bouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ScalarConverter_HPP
-# define ScalarConverter_HPP
+#include "Base.hpp"
 
-#include <iostream>
-#include <climits>
-
-class ScalarConverter
+int main()
 {
-	private :
-		ScalarConverter();
-		ScalarConverter(const ScalarConverter &org);
-		ScalarConverter &operator=(const ScalarConverter &org);
-		~ScalarConverter();
-	public :
-		static void convert(std::string data);
-};
-
-#endif
+	std::cout << "----------Start----------\n";
+	Base *p = generate();
+	identify(p);
+	std::cout << "--------------------\n";
+	identify(*p);
+	std::cout << "------------Finish--------\n";
+}

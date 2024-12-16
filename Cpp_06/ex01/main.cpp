@@ -1,30 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScalarConverter.hpp                                :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hel-bouk <hel-bouk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/15 15:04:56 by hel-bouk          #+#    #+#             */
-/*   Updated: 2024/12/16 12:12:08 by hel-bouk         ###   ########.fr       */
+/*   Created: 2024/12/16 14:26:37 by hel-bouk          #+#    #+#             */
+/*   Updated: 2024/12/16 15:29:11 by hel-bouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ScalarConverter_HPP
-# define ScalarConverter_HPP
+#include "Serializer.hpp"
+#include "Data.hpp"
 
-#include <iostream>
-#include <climits>
-
-class ScalarConverter
+int main()
 {
-	private :
-		ScalarConverter();
-		ScalarConverter(const ScalarConverter &org);
-		ScalarConverter &operator=(const ScalarConverter &org);
-		~ScalarConverter();
-	public :
-		static void convert(std::string data);
-};
-
-#endif
+	Data a;
+	Data *p;
+	uintptr_t data = 10000;
+	a.id = 10;
+	std::cout << p << std::endl;
+	p = Serializer::deserialize(data);
+	std::cout << Serializer::serialize(&a) << std::endl;
+	std::cout << p << std::endl;
+}
