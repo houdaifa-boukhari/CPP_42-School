@@ -6,7 +6,7 @@
 /*   By: hel-bouk <hel-bouk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/15 15:17:51 by hel-bouk          #+#    #+#             */
-/*   Updated: 2024/12/16 20:34:35 by hel-bouk         ###   ########.fr       */
+/*   Updated: 2024/12/16 20:40:55 by hel-bouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ void ConvertToFloat(std::string data)
 	try
 	{
 		if (!(data.length() == 1 && !std::isdigit(data[0])))
-			n = std::atof(data.c_str());
+			n = ::atof(data.c_str());
 		nb = n;
 		if (data.length() != 1 || std::isdigit(data[0]))
 		{
@@ -96,7 +96,7 @@ void ConvertToInt(std::string data)
 	try 
 	{
 		if (!(data.length() == 1 && !std::isdigit(data[0])))
-			n = std::stoll(data.c_str());
+			n = ::atof(data.c_str());
 		if (n > INT_MAX || n < INT_MIN)
 			std::cout << "int: impossible\n";
 		else if (data.length() != 1 || std::isdigit(data[0]))
@@ -117,7 +117,7 @@ void ConvertDouble(std::string data)
 	try
 	{
 		if (!(data.length() == 1 && !std::isdigit(data[0])))
-			n = std::atof(data.c_str());
+			n = ::atof(data.c_str());
 		nb = n;
 		if (data.length() != 1 || std::isdigit(data[0]))
 		{
