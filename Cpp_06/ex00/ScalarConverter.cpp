@@ -6,7 +6,7 @@
 /*   By: hel-bouk <hel-bouk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/15 15:17:51 by hel-bouk          #+#    #+#             */
-/*   Updated: 2024/12/16 20:40:55 by hel-bouk         ###   ########.fr       */
+/*   Updated: 2024/12/16 20:42:53 by hel-bouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -140,9 +140,9 @@ void ConvertToChar(std::string data)
 	try {
 		long long  n;
 		if (data.length() != 1)
-			n = std::stoll(data.c_str());
+			n = ::atof(data.c_str());
 		else
-			n = std::atoi(data.c_str());
+			n = ::atoi(data.c_str());
 		if (data.length() == 1)
 		{
 			if (!std::isdigit(data[0]))
