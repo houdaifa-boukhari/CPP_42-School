@@ -6,7 +6,7 @@
 /*   By: hel-bouk <hel-bouk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 16:50:52 by hel-bouk          #+#    #+#             */
-/*   Updated: 2024/12/16 20:51:24 by hel-bouk         ###   ########.fr       */
+/*   Updated: 2024/12/16 20:53:58 by hel-bouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,21 +45,21 @@ void identify(Base& p)
 		static_cast<void>(a);
 		std::cout << "type Base is A" << std::endl;
 	}
-	catch (const std::bad_cast& e)
+	catch (const std::bad_cast &e)
 	{
 		try {
 			B &b = dynamic_cast<B &>(p);
 			static_cast<void>(b);
 			std::cout << "type Base is B" << std::endl;
 		}
-		catch (const std::bad_cast& e)
+		catch (const std::bad_cast &e)
 		{
 			try {
 				C &c = dynamic_cast<C &>(p);
 				static_cast<void>(c);
 				std::cout << "type Base is C" << std::endl;
 			}
-			catch (const std::bad_cast& e)
+			catch (const std::bad_cast &e)
 			{
 				std::cout << "Have a no type" << std::endl;
 			}
