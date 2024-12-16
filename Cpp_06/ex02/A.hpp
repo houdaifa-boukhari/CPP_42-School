@@ -6,7 +6,7 @@
 /*   By: hel-bouk <hel-bouk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 16:47:32 by hel-bouk          #+#    #+#             */
-/*   Updated: 2024/12/16 17:05:01 by hel-bouk         ###   ########.fr       */
+/*   Updated: 2024/12/16 19:34:04 by hel-bouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,6 @@
 #include "Base.hpp"
 
 class A : public Base
-{
-	public :
-		void Sound(){std::cout << "A Class\n";}
-};
+{};
 
 #endif 
