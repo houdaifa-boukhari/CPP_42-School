@@ -6,7 +6,7 @@
 /*   By: hel-bouk <hel-bouk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 16:50:52 by hel-bouk          #+#    #+#             */
-/*   Updated: 2024/12/16 17:25:37 by hel-bouk         ###   ########.fr       */
+/*   Updated: 2024/12/16 20:51:24 by hel-bouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,8 @@
 
 Base * generate(void)
 {
-	// Base *p = new Base;
-	std::srand(std::time(NULL));
-	int rd = std::rand();
+	::srand(::time(NULL));
+	int rd = ::rand();
 
 	if (rd % 2 == 0)
 		return (dynamic_cast<Base *>(new A));
