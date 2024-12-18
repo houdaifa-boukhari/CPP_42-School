@@ -79,6 +79,7 @@
         "span": "cpp",
         "variant": "cpp",
         "text_encoding": "cpp",
-        "__nullptr": "cpp"
+        "__nullptr": "cpp",
+        "*.tpp": "cpp"
     }
 }

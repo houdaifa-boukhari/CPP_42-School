@@ -6,7 +6,7 @@
 /*   By: hel-bouk <hel-bouk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/17 17:18:35 by hel-bouk          #+#    #+#             */
-/*   Updated: 2024/12/17 18:05:59 by hel-bouk         ###   ########.fr       */
+/*   Updated: 2024/12/18 14:18:52 by hel-bouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,14 @@ Array<T> &Array<T>::operator=(const Array<T> &arr)
 
 template <typename T>
 T & Array<T>::operator[](size_t index)
+{
+    if (index >= this->size_arr || index < 0)
+        throw (std::out_of_range("Index out of range"));
+    return (arr[index]);
+}
+
+template <typename T>
+T & Array<T>::operator[](size_t index) const
 {
     if (index >= this->size_arr || index < 0)
         throw (std::out_of_range("Index out of range"));

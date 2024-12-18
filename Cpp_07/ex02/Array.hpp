@@ -6,7 +6,7 @@
 /*   By: hel-bouk <hel-bouk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/17 13:01:21 by hel-bouk          #+#    #+#             */
-/*   Updated: 2024/12/17 17:51:24 by hel-bouk         ###   ########.fr       */
+/*   Updated: 2024/12/18 14:19:29 by hel-bouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ class Array
 		Array(const Array &arr);
 		Array &operator=(const Array &arr);
 		T &operator[](size_t index);
+		T &operator[](size_t index) const;
 		~Array();
 		size_t size() const;
 };

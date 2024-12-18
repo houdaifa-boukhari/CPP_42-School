@@ -1,31 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   iter.hpp                                           :+:      :+:    :+:   */
+/*   easyfind.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hel-bouk <hel-bouk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/17 12:12:53 by hel-bouk          #+#    #+#             */
-/*   Updated: 2024/12/18 14:24:24 by hel-bouk         ###   ########.fr       */
+/*   Created: 2024/12/18 10:40:54 by hel-bouk          #+#    #+#             */
+/*   Updated: 2024/12/18 10:44:51 by hel-bouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MAIN_HPP
-#define MAIN_HPP
+#ifndef EASYFIND_HPP
+#define EASYFIND_HPP
 
 #include <iostream>
 
-template <typename T>
-void print_(T &data)
-{
-	std::cout << data << std::endl;
-}
+template <typenmae T>
 
-template <typename T, typename A, typename E>
-void iter(T *arr, size_t size, A(*f)(E &))
-{
-	for (size_t i = 0; i < size; i++)
-		f(arr[i]);
-}
+
 
 #endif
