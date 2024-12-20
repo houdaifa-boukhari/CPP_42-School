@@ -1,8 +1,8 @@
 NAME = containers
-HEADER = easyfind.hpp
+HEADER = Span.hpp
 CPP = c++
-CXXFLAGS = -Wall -Wextra -Werror -std=c++98
-SRC = main.cpp
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98 #-g -fsanitize=address
+SRC = main.cpp Span.cpp
 OBJS = $(SRC:.cpp=.o)
 RM = rm -f
 

@@ -1,30 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   easyfind.hpp                                       :+:      :+:    :+:   */
+/*   span.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hel-bouk <hel-bouk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/18 10:40:54 by hel-bouk          #+#    #+#             */
-/*   Updated: 2024/12/19 16:59:45 by hel-bouk         ###   ########.fr       */
+/*   Created: 2024/12/19 17:04:37 by hel-bouk          #+#    #+#             */
+/*   Updated: 2024/12/20 21:08:53 by hel-bouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef EASYFIND_HPP
-#define EASYFIND_HPP
+#ifndef SPAN_CPP
+#define SPAN_CPP
 
+#include <vector>
+#include <chrono>
+#include <climits>
 #include <iostream>
-#include <list>
 #include <algorithm>
 
-template <typename T>
-bool easyfind(const T& container, int n)
+class Span
 {
-	typename T::const_iterator it;
-	it  = find(container.begin(), container.end(), n);
-	if (it != container.end())
-		return (true);
-	return (false);
-}
+	private :
+		unsigned int N;
+		unsigned int size;
+		std::vector<int> arr;
+	public :
+		Span();
+		Span(unsigned int N);
+		Span(const Span &other);
+		Span &operator=(const Span &other);
+		~Span();
+		void addNumber(int value);
+		unsigned int shortestSpan();
+		unsigned int longestSpan();
+		void addMultipleNumber(std::vector<int>& c_arr);
+};
 
 #endif
