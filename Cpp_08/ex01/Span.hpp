@@ -6,12 +6,12 @@
 /*   By: hel-bouk <hel-bouk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/19 17:04:37 by hel-bouk          #+#    #+#             */
-/*   Updated: 2024/12/20 21:08:53 by hel-bouk         ###   ########.fr       */
+/*   Updated: 2024/12/20 22:20:16 by hel-bouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SPAN_CPP
-#define SPAN_CPP
+#ifndef SPAN_HPP
+#define SPAN_HPP
 
 #include <vector>
 #include <chrono>
