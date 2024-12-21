@@ -6,7 +6,7 @@
 /*   By: hel-bouk <hel-bouk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/20 21:16:05 by hel-bouk          #+#    #+#             */
-/*   Updated: 2024/12/20 22:17:23 by hel-bouk         ###   ########.fr       */
+/*   Updated: 2024/12/21 12:26:51 by hel-bouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 #define MutantStack_HPP
 
 #include <stack>
+#include <list>
 #include <iostream>
 #include <algorithm>
 

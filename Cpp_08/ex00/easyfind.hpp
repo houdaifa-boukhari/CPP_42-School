@@ -6,7 +6,7 @@
 /*   By: hel-bouk <hel-bouk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/18 10:40:54 by hel-bouk          #+#    #+#             */
-/*   Updated: 2024/12/19 16:59:45 by hel-bouk         ###   ########.fr       */
+/*   Updated: 2024/12/21 12:32:52 by hel-bouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 #include <algorithm>
 
 template <typename T>
-bool easyfind(const T& container, int n)
+bool easyfind(const T& container, int &n)
 {
 	typename T::const_iterator it;
 	it  = find(container.begin(), container.end(), n);
