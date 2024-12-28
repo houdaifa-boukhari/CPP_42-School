@@ -1,8 +1,8 @@
-NAME = btc
-HEADER = BitcoinExchange.hpp
+NAME = RPN
+HEADER = RPN.hpp
 CPP = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
-SRC = main.cpp BitcoinExchange.cpp
+SRC = main.cpp RPN.cpp
 OBJS = $(SRC:.cpp=.o)
 RM = rm -f
 
