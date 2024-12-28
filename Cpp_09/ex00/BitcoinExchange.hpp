@@ -6,7 +6,7 @@
 /*   By: hel-bouk <hel-bouk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/21 18:10:33 by hel-bouk          #+#    #+#             */
-/*   Updated: 2024/12/28 15:42:33 by hel-bouk         ###   ########.fr       */
+/*   Updated: 2024/12/28 16:11:19 by hel-bouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 #define BitcoinExchange_HPP
 
 #include <map>
-#include <sstream>
 #include <fstream>
 #include <iostream>
 #include <algorithm>
