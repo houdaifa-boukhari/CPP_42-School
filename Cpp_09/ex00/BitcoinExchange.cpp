@@ -6,7 +6,7 @@
 /*   By: hel-bouk <hel-bouk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/22 11:25:05 by hel-bouk          #+#    #+#             */
-/*   Updated: 2024/12/28 16:03:28 by hel-bouk         ###   ########.fr       */
+/*   Updated: 2024/12/28 18:02:14 by hel-bouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,19 @@
 
 void exchangeValue(std::map<std::string, float> &BtcDataBase, std::map<std::string, float> &btcInfo)
 {
-	std::map<std::string, float>::iterator it, it1 = btcInfo.begin();
+	std::map<std::string, float>::iterator it, it1 = btcInfo.begin(), it2, it3;
 	it = BtcDataBase.find(it1->first);
+	it3 = ++BtcDataBase.begin();
+	it2 = ++it1 , --it1;
 	if (it != BtcDataBase.end())
 		std::cout << it1->first << " => " << it1->second << " = " << it1->second * BtcDataBase[it1->first] << "\n";
 	else
 	{
+		if (strcmp(it1->first.c_str(), it3->first.c_str()) < 0)
+		{
+			std::cerr << RED << "In " << it1->first << " bitcoin not created\n" << RESET;
+			return ;
+		}
 		it = --BtcDataBase.lower_bound(it1->first);
 		std::cout << it1->first << " => " << it1->second << " = " << it1->second * BtcDataBase[it->first] << "\n";
 	}

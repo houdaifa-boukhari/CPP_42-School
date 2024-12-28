@@ -6,7 +6,7 @@
 /*   By: hel-bouk <hel-bouk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/21 18:10:21 by hel-bouk          #+#    #+#             */
-/*   Updated: 2024/12/28 15:47:11 by hel-bouk         ###   ########.fr       */
+/*   Updated: 2024/12/28 17:37:00 by hel-bouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,11 @@ bool ValuetIsValid(Date &date)
 {
 	// MOUNTH           J	F	M	A	M	J	J	A	S	O	N	D
 	int MounthDays[] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+	date.day = date.day.substr(0, 2);
+	if (date.year.find_first_not_of(DEGITS) != std::string::npos
+		|| date.mounth.find_first_not_of(DEGITS) != std::string::npos
+		|| date.day.find_first_not_of(DEGITS) != std::string::npos)
+		return (false);
 	date._year = ::atoi(date.year.c_str());
 	date._mounth = ::atoi(date.mounth.c_str());
 	date._day = ::atoi(date.day.c_str());

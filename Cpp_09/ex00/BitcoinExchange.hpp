@@ -6,7 +6,7 @@
 /*   By: hel-bouk <hel-bouk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/21 18:10:33 by hel-bouk          #+#    #+#             */
-/*   Updated: 2024/12/28 16:11:19 by hel-bouk         ###   ########.fr       */
+/*   Updated: 2024/12/28 17:30:34 by hel-bouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@
 #define GREEN "\033[32m"
 #define RESET "\033[0m"
 #define DEGITS_POINT "0123456789."
+#define DEGITS "0123456789"
 
 typedef struct Date
 {
