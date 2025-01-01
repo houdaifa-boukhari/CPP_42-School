@@ -6,7 +6,7 @@
 /*   By: hel-bouk <hel-bouk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/31 15:05:17 by hel-bouk          #+#    #+#             */
-/*   Updated: 2025/01/01 15:13:09 by hel-bouk         ###   ########.fr       */
+/*   Updated: 2025/01/01 21:09:32 by hel-bouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,10 +95,6 @@ void MergeInsertSort(std::vector<int> &arr)
 	_vector pairs = DevideOfPairs(arr);
 	merge(pairs, 2);
 	update(pairs, mainchain);
-	pairs.clear();
-	pairs.push_back(mainchain);
-	mainchain.clear();
-	update(pairs, mainchain);
 	// displaye time
 	::gettimeofday(&end, NULL);
     sec = end.tv_sec - start.tv_sec;
@@ -109,35 +105,6 @@ void MergeInsertSort(std::vector<int> &arr)
 	for (size_t i = 0; i < mainchain.size(); ++i)
 		std::cout << mainchain[i] << " ";
 	std::cout << std::endl;
-}
-
-
-void print_pairs(_vector &pairs)
-{
-	for (size_t i = 0; i < pairs.size(); ++i)
-	{
-        std::cout << "[";
-        for (size_t j = 0; j < pairs[i].size(); ++j)
-		{
-            std::cout << pairs[i][j];
-            if (j < pairs[i].size() - 1)
-				std::cout << ", ";
-        }
-        std::cout << "]\n";
-    }
-	std::cout << "---------------------\n";
-}
-
-void print_main_pen(std::vector<int> mainchain, std::vector<int> penchain)
-{
-
-	std::cout << "---------------------\n";
-	for (size_t i = 0; i < mainchain.size(); ++i)
-		std::cout << mainchain[i] << " " ;
-	std::cout << "\n---------------------\n";
-	for (size_t i = 0; i < penchain.size(); ++i)
-		std::cout << penchain[i] << " " ;
-	std::cout << "\n---------------------\n";
 }
 
 /////////deque//////////////////////
@@ -233,7 +200,7 @@ void MergeInsertSort_(std::deque<int> &arr)
 	::gettimeofday(&end, NULL);
     sec = end.tv_sec - start.tv_sec;
     micro = end.tv_usec - start.tv_usec;
-    double diff = (sec / 1000000.0) + (micro);
+    double diff = (sec * 1000000.0) + (micro);
 	std::cout << "Time to process a range of " << mainchain.size() << " elements with std::deque : " << diff  << " us" << "\n";
 	/////////////////////
 	for (size_t i = 0; i < mainchain.size(); ++i)

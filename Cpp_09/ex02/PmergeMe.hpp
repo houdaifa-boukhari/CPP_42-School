@@ -6,7 +6,7 @@
 /*   By: hel-bouk <hel-bouk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/31 15:05:21 by hel-bouk          #+#    #+#             */
-/*   Updated: 2025/01/01 15:19:04 by hel-bouk         ###   ########.fr       */
+/*   Updated: 2025/01/01 20:54:03 by hel-bouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ typedef std::vector<std::vector<int> > _vector;
 typedef std::deque<std::deque<int> > _deque;
 
 void print_pairs(_vector &pairs);
-void print_main_pen(std::vector<int> mainchain, std::vector<int> penchain);
+void print_main_pen(std::vector<int> mainchain);
 
 void merge(_vector &pairs, size_t idx);
 void MergeInsertSort(std::vector<int> &arr);
