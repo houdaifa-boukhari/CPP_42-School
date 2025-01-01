@@ -6,7 +6,7 @@
 /*   By: hel-bouk <hel-bouk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/31 15:06:50 by hel-bouk          #+#    #+#             */
-/*   Updated: 2024/12/31 16:08:56 by hel-bouk         ###   ########.fr       */
+/*   Updated: 2025/01/01 15:11:36 by hel-bouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 int main(int ac, char **av)
 {
 	std::vector<int> arr;
+	std::deque<int> arr1;
 
 	if (ac < 2)
 		return (std::cerr << "Use ./PmergeMe Args\n", 1);
@@ -22,6 +23,7 @@ int main(int ac, char **av)
 		return (std::cerr << "At least you need two numbers and they are sorted.\n", 1);
 	for (int i = 1; i < ac; i++)
 	{
+		//overflow
 		std::string tmp = av[i];
 		if (tmp.find_first_not_of(NUMBERS) != std::string::npos)
 			return (std::cerr << "Error\n", 1);
@@ -29,6 +31,8 @@ int main(int ac, char **av)
 			 || (tmp[0] == '+' && (!tmp[1] || !::isdigit(tmp[1]))))
 			return (std::cerr << "Error\n", 1);
 		arr.push_back(::atoi(av[i]));
+		arr1.push_back(::atoi(av[i]));
 	}
 	MergeInsertSort(arr);
+	MergeInsertSort_(arr1);
 }

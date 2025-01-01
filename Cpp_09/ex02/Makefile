@@ -1,7 +1,7 @@
 NAME = PmergeMe
 HEADER = PmergeMe.hpp
 CPP = c++
-CXXFLAGS =  -g -fsanitize=address
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 SRC = main.cpp PmergeMe.cpp
 OBJS = $(SRC:.cpp=.o)
 RM = rm -f
