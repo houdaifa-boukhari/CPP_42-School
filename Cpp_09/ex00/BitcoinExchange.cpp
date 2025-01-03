@@ -6,7 +6,7 @@
 /*   By: hel-bouk <hel-bouk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/22 11:25:05 by hel-bouk          #+#    #+#             */
-/*   Updated: 2025/01/02 22:08:21 by hel-bouk         ###   ########.fr       */
+/*   Updated: 2025/01/03 10:13:12 by hel-bouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ std::map<std::string, float> ParceDataFile(std::ifstream &DataFile)
 
 bool ValidePrice(std::string price, float &value)
 {
-	std::string delim = " \t";
+	std::string delim = " ";
 	size_t start = price.find_first_not_of(delim);
     size_t end = price.find_last_not_of(delim);
     price = (start == std::string::npos) ? "" : price.substr(start);

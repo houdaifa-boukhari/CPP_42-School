@@ -6,7 +6,7 @@
 /*   By: hel-bouk <hel-bouk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/31 15:05:17 by hel-bouk          #+#    #+#             */
-/*   Updated: 2025/01/02 22:39:48 by hel-bouk         ###   ########.fr       */
+/*   Updated: 2025/01/03 17:40:47 by hel-bouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -184,10 +184,6 @@ void MergeInsertSort_(std::deque<int> &arr)
 	start = ::clock();
 	_deque pairs = DevideOfPairs_(arr);
 	merge_(pairs, 2);
-	update_(pairs, mainchain);
-	pairs.clear();
-	pairs.push_back(mainchain);
-	mainchain.clear();
 	update_(pairs, mainchain);
 	// displaye time
 	end = ::clock();
