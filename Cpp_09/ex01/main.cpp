@@ -6,7 +6,7 @@
 /*   By: hel-bouk <hel-bouk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/28 16:11:54 by hel-bouk          #+#    #+#             */
-/*   Updated: 2024/12/28 18:45:38 by hel-bouk         ###   ########.fr       */
+/*   Updated: 2025/01/02 22:13:23 by hel-bouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,7 @@ int main(int ac, char **av)
 	catch (const char *e)
 	{
 		std::cerr << e << "\n";
+		return (1);
 	}
+	return (0);
 }

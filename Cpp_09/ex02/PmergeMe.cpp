@@ -6,7 +6,7 @@
 /*   By: hel-bouk <hel-bouk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/31 15:05:17 by hel-bouk          #+#    #+#             */
-/*   Updated: 2025/01/01 21:09:32 by hel-bouk         ###   ########.fr       */
+/*   Updated: 2025/01/02 22:39:48 by hel-bouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,19 +88,14 @@ void MergeInsertSort(std::vector<int> &arr)
 {
 	std::vector<int> mainchain;
 
-	struct timeval start, end;
-    double sec, micro;
-
-    ::gettimeofday(&start, NULL);
+	clock_t start, end;
+	start = clock();
 	_vector pairs = DevideOfPairs(arr);
 	merge(pairs, 2);
 	update(pairs, mainchain);
 	// displaye time
-	::gettimeofday(&end, NULL);
-    sec = end.tv_sec - start.tv_sec;
-    micro = end.tv_usec - start.tv_usec;
-    double diff = (sec / 1000000.0) + (micro);
-	std::cout << "Time to process a range of " << mainchain.size() << " elements with std::vector : " << diff  << " us" << "\n";
+	end = clock();
+	std::cout << "Time to process a range of " << mainchain.size() << " elements with std::vector : " << (static_cast<double>(end - start) / CLOCKS_PER_SEC) * 1000000 << " us" << "\n";
 	/////////////////////
 	for (size_t i = 0; i < mainchain.size(); ++i)
 		std::cout << mainchain[i] << " ";
@@ -185,10 +180,8 @@ void MergeInsertSort_(std::deque<int> &arr)
 {
 	std::deque<int> mainchain;
 
-	struct timeval start, end;
-    double sec, micro;
-
-    ::gettimeofday(&start, NULL);
+	clock_t start, end;
+	start = ::clock();
 	_deque pairs = DevideOfPairs_(arr);
 	merge_(pairs, 2);
 	update_(pairs, mainchain);
@@ -197,11 +190,8 @@ void MergeInsertSort_(std::deque<int> &arr)
 	mainchain.clear();
 	update_(pairs, mainchain);
 	// displaye time
-	::gettimeofday(&end, NULL);
-    sec = end.tv_sec - start.tv_sec;
-    micro = end.tv_usec - start.tv_usec;
-    double diff = (sec * 1000000.0) + (micro);
-	std::cout << "Time to process a range of " << mainchain.size() << " elements with std::deque : " << diff  << " us" << "\n";
+	end = ::clock();
+	std::cout << "Time to process a range of " << mainchain.size() << " elements with std::deque : " << (static_cast<double>(end - start) / CLOCKS_PER_SEC) * 1000000 << " us" << "\n";
 	/////////////////////
 	for (size_t i = 0; i < mainchain.size(); ++i)
 		std::cout << mainchain[i] << " ";

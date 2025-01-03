@@ -6,7 +6,7 @@
 /*   By: hel-bouk <hel-bouk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/22 11:25:05 by hel-bouk          #+#    #+#             */
-/*   Updated: 2024/12/28 18:02:14 by hel-bouk         ###   ########.fr       */
+/*   Updated: 2025/01/02 22:08:21 by hel-bouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -130,7 +130,7 @@ bool FormatIsValid(std::string In_date)
 		return (false);
 	date.day = tmp; 
 	if (date.year.length() != 4 || date.mounth.length() != 2
-		|| date.day.length() != 3 || !ValuetIsValid(date))
+		|| date.day.length() != 3 || date.day[2] != ' ' || !ValuetIsValid(date))
 		return (false);
 	return (true);
 }

@@ -6,7 +6,7 @@
 /*   By: hel-bouk <hel-bouk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/28 16:57:04 by hel-bouk          #+#    #+#             */
-/*   Updated: 2024/12/28 19:57:23 by hel-bouk         ###   ########.fr       */
+/*   Updated: 2025/01/02 22:18:11 by hel-bouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ void apply_operations(char op, std::stack<int> &stack)
 
 void manilpulatData(std::string data)
 {
+	bool op = false;
 	std::stack<int> stack;
 	if (data.find_first_not_of(VALID_CH) != std::string::npos)
 		throw ("Error: Invalid Character");
@@ -63,10 +64,13 @@ void manilpulatData(std::string data)
 			{
 				if (tmp[1] && tmp[1] != ' ')
 					throw ("Error: Invalide Input");
+				op = true;
 				apply_operations(tmp[0], stack);
 			}
 		}
 	}
+	if (stack.size() != 1 || (stack.size() == 1 && !op))
+		throw("Your Nedd Add More Operations Or Nunber");
 	if (!stack.empty())
 		std::cout << stack.top() << std::endl;
 }
