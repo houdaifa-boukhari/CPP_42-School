@@ -1,7 +1,5 @@
 # C++ Modules (00 to 09) - 42 School
 
-![C++ Logo](https://upload.wikimedia.org/wikipedia/commons/1/18/ISO_C%2B%2B_Logo.svg)
-
 This repository contains all the C++ modules (00 to 09) completed as part of the 42 School curriculum. Each module introduces key concepts of C++ programming, starting from the basics and progressing to advanced topics like templates and the Standard Template Library (STL).
 
 ---
